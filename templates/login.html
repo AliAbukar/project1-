@@ -1,0 +1,26 @@
+<!-- templates/login.html -->
+
+{% extends "layout.html" %}
+{% block title %} Login {% endblock%}
+{% block content %}
+<div class="column is-4 is-offset-4">
+    <h3 class="title">Login here</h3>
+    <h4 class="subtitle">{{ message }}</h4>
+    <div class="box">
+        <form method="POST" action="{{ url_for('login')}}">
+            <div class="field">
+                <div class="control">
+                    <input class="input is-medium" type="text" name="username" autocomplete="off" placeholder="Enter your username" autofocus="" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <input class="input is-medium" type="password" name="password" placeholder="Enter your password" required>
+                </div>
+            </div>
+            <button class="button is-block is-info is-medium is-fullwidth">Sign in</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

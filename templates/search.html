@@ -1,0 +1,24 @@
+<!-- templates/search.html -->
+
+{% extends "layout.html" %}
+{% block title %} Search {% endblock%}
+{% block content %}
+<div class="column is-4 is-offset-4">
+    <h1 class="title">Welcome {{ username[0]|upper }}{{ username[1:] }}</h1>
+    <h3 class="title">Search Books</h3>
+    <div class="box">
+        <form method="POST" action="{{ url_for('search')}}">
+            <div class="field">
+                <div class="control">
+                    <input class="input is-medium" type="text" name="searchQuery" placeholder="isbn, title,author" autofocus="" required>
+                </div>
+                <div class="control">
+                    <p> Example: <em> isbn, title,author</em> </p>
+                </div>
+            </div>
+            <button class="button is-block is-info is-medium is-fullwidth">Search</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
